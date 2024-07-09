@@ -1,0 +1,452 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "KrakenD - API Gateway For Montak Microservice",
+  "extra_config": {
+    "router": {
+      "return_error_msg": true
+    },
+    "security/cors": {
+      "allow_methods": [
+        "POST",
+        "GET",
+        "PUT",
+        "DELETE",
+        "PATCH"
+      ],
+      "allow_origins": [
+        "*"
+      ],
+      "allow_headers": ["*"],
+      "allow_credentials": true,
+      "debug": true,
+      "expose_headers": [
+        "*"
+      ]
+    }
+  },
+  "timeout": "10000ms",
+  "cache_ttl": "0s",
+  "output_encoding": "json",
+  "endpoints": [
+    {
+      "endpoint": "/auth/login",
+      "method": "POST",
+      "output_encoding": "json",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/auth/login",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://103.150.191.172:3000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/graphql",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://103.150.191.172:4000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/saya",
+      "method": "GET",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa", "Dosen", "Ketua Prodi", "Administrator Tenaga Kependidikan", "Administrator Unit"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/auth/whoami",
+          "encoding": "json",
+          "method": "GET",
+          "host": [
+            "http://103.150.191.172:3000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/refresh-token",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/auth/refresh-token",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://103.150.191.172:3000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pembayaran/{nim}",
+      "method": "PATCH",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Keuangan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pembayaran/{nim}",
+          "encoding": "json",
+          "method": "PATCH",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/biaya",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Keuangan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/biaya",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/biaya/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Keuangan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/biaya/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/biaya/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Keuangan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/biaya/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/batas-pendaftaran",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/batas-pendaftaran",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/batas-pendaftaran/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/batas-pendaftaran/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/batas-pendaftaran/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/batas-pendaftaran/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://103.150.191.172:4002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pengajuan",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pengajuan",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/media/{name}",
+      "method": "GET",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "url_pattern": "/media/{name}",
+          "method": "GET",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    }
+  ]
+}
