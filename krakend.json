@@ -395,6 +395,302 @@
       ]
     },
     {
+      "endpoint": "/bidang-keahlian",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bidang-keahlian/",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/bidang-keahlian/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bidang-keahlian/{id}/",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/bidang-keahlian/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bidang-keahlian/{id}/",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/dosen-bidang-keahlian",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/dosen-bidang-keahlian/",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/dosen-bidang-keahlian/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/dosen-bidang-keahlian/{id}/",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/dosen-bidang-keahlian/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/dosen-bidang-keahlian/{id}/",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pengajuan/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pengajuan/{id}/",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pengajuan/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pengajuan/{id}/",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
       "endpoint": "/pengajuan",
       "method": "POST",
       "input_headers": [
@@ -432,16 +728,73 @@
       ]
     },
     {
-      "endpoint": "/media/{name}",
-      "method": "GET",
+      "endpoint": "/file/",
+      "method": "POST",
       "input_headers": [
         "*"
       ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
       "backend": [
         {
           "disable_host_sanitize": false,
-          "url_pattern": "/media/{name}",
-          "method": "GET",
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file/",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.80.1:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/file/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file/{id}/",
+          "encoding": "json",
+          "method": "DELETE",
           "host": [
             "http://192.168.80.1:4003"
           ]
