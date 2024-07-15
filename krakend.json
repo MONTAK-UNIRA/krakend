@@ -1022,6 +1022,154 @@
           ]
         }
       ]
+    },
+    {
+      "endpoint": "/bimbingan",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa", "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bimbingan",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.80.1:4004"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/bimbingan/{id}",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa", "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bimbingan/{id}",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.80.1:4004"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/bimbingan/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bimbingan/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.80.1:4004"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/bimbingan/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/bimbingan/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.80.1:4004"
+          ]
+        }
+      ]
     }
   ]
 }
