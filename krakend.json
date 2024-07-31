@@ -17,7 +17,9 @@
       "allow_origins": [
         "*"
       ],
-      "allow_headers": ["*"],
+      "allow_headers": [
+        "*"
+      ],
       "allow_credentials": true,
       "debug": true,
       "expose_headers": [
@@ -86,7 +88,11 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Mahasiswa", "Dosen", "Ketua Prodi", "Administrator Tenaga Kependidikan", "Administrator Unit"
+            "Mahasiswa",
+            "Dosen",
+            "Ketua Prodi",
+            "Administrator Tenaga Kependidikan",
+            "Administrator Unit"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -426,7 +432,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -463,7 +469,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -500,7 +506,44 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/skripsi/{id}",
+      "method": "PATCH",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Ketua Prodi"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/skripsi/{id}/",
+          "encoding": "json",
+          "method": "PATCH",
+          "host": [
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -537,7 +580,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -574,7 +617,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -611,7 +654,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -648,7 +691,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -685,7 +728,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -722,7 +765,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -759,7 +802,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -796,7 +839,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -813,7 +856,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Ketua Prodi", "Dosen"
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -833,7 +877,7 @@
           "encoding": "json",
           "method": "PATCH",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -870,7 +914,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -907,7 +951,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -944,7 +988,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -981,7 +1025,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -1018,7 +1062,7 @@
           "encoding": "json",
           "method": "PATCH",
           "host": [
-            "http://192.168.80.1:4003"
+            "http://192.168.1.65:4003"
           ]
         }
       ]
@@ -1035,7 +1079,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Mahasiswa", "Dosen"
+            "Mahasiswa",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1055,7 +1100,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4004"
+            "http://192.168.1.65:4004"
           ]
         }
       ]
@@ -1072,7 +1117,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Mahasiswa", "Dosen"
+            "Mahasiswa",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1092,7 +1138,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4004"
+            "http://192.168.1.65:4004"
           ]
         }
       ]
@@ -1129,7 +1175,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4004"
+            "http://192.168.1.65:4004"
           ]
         }
       ]
@@ -1166,7 +1212,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4004"
+            "http://192.168.1.65:4004"
           ]
         }
       ]
@@ -1183,7 +1229,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1203,7 +1250,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1220,7 +1267,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1240,7 +1288,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1257,7 +1305,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1277,7 +1326,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1294,7 +1343,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1314,7 +1364,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1331,7 +1381,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1351,7 +1402,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1368,7 +1419,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1388,7 +1440,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1405,7 +1457,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1425,7 +1478,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1442,7 +1495,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1462,7 +1516,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1479,7 +1533,8 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1499,7 +1554,7 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1516,7 +1571,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi", "Dosen"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1536,7 +1593,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1553,7 +1610,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi", "Dosen"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1573,7 +1632,46 @@
           "encoding": "json",
           "method": "PATCH",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/daftar-ujian-sidang",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa",
+            "Ketua Prodi",
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/daftar-ujian-sidang",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1590,7 +1688,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Mahasiswa", "Ketua Prodi", "Administrator Tenaga Kependidikan"
+            "Mahasiswa",
+            "Ketua Prodi",
+            "Administrator Tenaga Kependidikan"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1610,7 +1710,124 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4005"
+            "http://192.168.1.65:4005"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/file-skripsi",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa",
+            "Ketua Prodi",
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file-skripsi",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4005"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/file-skripsi/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa",
+            "Ketua Prodi",
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file-skripsi/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4005"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/file-skripsi/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa",
+            "Ketua Prodi",
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file-skripsi/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4005"
           ]
         }
       ]
@@ -1627,7 +1844,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi", "Dosen"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1647,7 +1866,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4006"
+            "http://192.168.1.65:4006"
           ]
         }
       ]
@@ -1664,7 +1883,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi", "Dosen"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1684,7 +1905,7 @@
           "encoding": "json",
           "method": "PUT",
           "host": [
-            "http://192.168.80.1:4006"
+            "http://192.168.1.65:4006"
           ]
         }
       ]
@@ -1701,7 +1922,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi", "Dosen"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1721,7 +1944,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://192.168.80.1:4006"
+            "http://192.168.1.65:4006"
           ]
         }
       ]
@@ -1738,7 +1961,9 @@
           "alg": "HS256",
           "jwk_url": "http://103.150.191.172:3000/symmetric.json",
           "roles": [
-            "Adminsitrator Tenaga Kependidikan", "Ketua Prodi", "Dosen"
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
           ],
           "roles_key": "roles",
           "cache": false,
@@ -1758,7 +1983,1126 @@
           "encoding": "json",
           "method": "DELETE",
           "host": [
-            "http://192.168.80.1:4006"
+            "http://192.168.1.65:4006"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/ujian-skripsi/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/ujian-skripsi/{id}/",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4006"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/penguji",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/penguji/",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4006"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/penguji/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan",
+            "Ketua Prodi",
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/penguji/{id}/",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4006"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pengaturan-nilai",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan",
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pengaturan-nilai",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pengaturan-nilai/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pengaturan-nilai/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/pengaturan-nilai/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/pengaturan-nilai/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/kriteria-nilai",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan",
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/kriteria-nilai",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/kriteria-nilai/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/kriteria-nilai/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/kriteria-nilai/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/kriteria-nilai/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/nilai-penguji",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan",
+            "Dosen"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/nilai-penguji",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/nilai-penguji/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/nilai-penguji/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/nilai-penguji/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/nilai-penguji/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/penilaian-ujian",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/penilaian-ujian",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/penilaian-ujian",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/penilaian-ujian",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/penilaian",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/penilaian",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/penilaian/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/penilaian/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/perbaikan-skripsi",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/revisi",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/perbaikan-skripsi/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/revisi/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/perbaikan-skripsi/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/revisi/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/upload-file-revisi",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/upload-file-revisi",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/upload-file-revisi/{id}",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/upload-file-revisi/{id}",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/upload-file-revisi/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/upload-file-revisi/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4007"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/syarat-kelulusan",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/syarat-kelulusan",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/syarat-kelulusan/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/syarat-kelulusan/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/syarat-kelulusan/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/syarat-kelulusan/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/syarat-kelulusan-skripsi",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan", "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/syarat-kelulusan-skripsi",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/syarat-kelulusan-skripsi/{id}",
+      "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/syarat-kelulusan-skripsi/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/syarat-kelulusan-skripsi/{id}",
+      "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Administrator Tenaga Kependidikan"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/syarat-kelulusan-skripsi/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/file-syarat",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file-syarat",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4008"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/file-syarat/{id}",
+      "method": "POST",
+      "input_headers": [
+        "*"
+      ],
+      "output_encoding": "json",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "HS256",
+          "jwk_url": "http://103.150.191.172:3000/symmetric.json",
+          "roles": [
+            "Mahasiswa"
+          ],
+          "roles_key": "roles",
+          "cache": false,
+          "disable_jwk_security": true,
+          "operation_debug": true
+        }
+      },
+      "backend": [
+        {
+          "disable_host_sanitize": false,
+          "extra_config": {
+            "backend/http": {
+              "return_error_code": true
+            }
+          },
+          "url_pattern": "/file-syarat/{id}",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://192.168.1.65:4008"
           ]
         }
       ]
